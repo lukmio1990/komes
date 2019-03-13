@@ -567,7 +567,7 @@ nav {
 }
 
 
-.beers::after {
+/* .beers::after {
     content: "";
     display: block;
     position: absolute;
@@ -582,7 +582,7 @@ nav {
     background-size: contain;
     filter: opacity(0.1);
 
-}
+} */
 
 .beers-content {
     display: flex;
@@ -636,14 +636,16 @@ nav {
 
 }
 
+@media (max-width:1500px) {}
+
 .description>p:nth-child(3) {
     text-transform: uppercase;
     font-size: 25px;
     font-weight: bold;
 }
 
-.description>p:nth-child(5),
-.description>p:nth-child(4) {
+.description>p:nth-child(4),
+.description>p:nth-child(5) {
     text-transform: uppercase;
     font-size: 20px;
     margin-top: 0;
@@ -652,6 +654,35 @@ nav {
 .description img {
     margin-top: 0;
     max-width: 475px;
+}
+
+@media (max-width:1500px) {
+
+    .beer h3 {
+        top: 2%;
+        left: 1%;
+        transform: translate(0, 0);
+
+        font-size: 40px;
+
+    }
+
+    .description h4 {
+        display: none;
+
+    }
+
+    .description>p:nth-child(2) {
+        font-size: 17px;
+        margin-top: 7vw;
+
+    }
+
+    .description>p:nth-child(3) {
+        font-size: 20px;
+
+    }
+
 }
 
 /* div butelka */
@@ -690,17 +721,6 @@ nav {
     margin-top: 40px;
     font-size: 22px;
     text-transform: uppercase;
-}
-
-.composition h5::after {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 30%;
-    top: 50%;
-    width: 60%;
-    height: 4px;
-    background-color: white;
 }
 
 .materials {
@@ -1086,6 +1106,8 @@ nav {
 }
 
 .info-name {
+    display: flex;
+    flex-direction: column;
     font-family: var(--headFont);
     color: white;
     margin-left: 150px;
@@ -1248,6 +1270,12 @@ nav {
 
     .contact-form {
         width: 80vw;
+
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 50vw;
 
     }
 }
