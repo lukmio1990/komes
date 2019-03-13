@@ -1,0 +1,1275 @@
+/* font-family: 'Inknut Antiqua', serif;
+font-family: 'Barlow Condensed', sans-serif; */
+
+:root {
+    --mainFont: 'Inknut Antiqua', serif;
+    --headFont: 'Barlow Condensed', sans-serif;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(img/bgc\ komes\ 4.png);
+    box-shadow: 0px 10px 66px 37px rgba(133, 123, 123, 0.75);
+}
+
+.wrap {
+    position: relative;
+    max-width: 1600px;
+    margin: 0 auto;
+    box-shadow: 0px 20px 72px 0px rgba(0, 0, 0, 0.75);
+    border: 2px solid rgba(20, 15, 15, 0.75);
+    overflow: hidden;
+}
+
+/* STRZAŁKA POWROTU DO GÓRY */
+.goToUp {
+    position: fixed;
+    bottom: 3vh;
+    left: 95%;
+    font-size: 50px;
+    color: #52755D;
+    z-index: 3;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.goToUp:hover {
+    transform: scale(1.1);
+}
+
+.arrowActive {
+    opacity: 1;
+}
+
+header {
+    position: relative;
+    background-image: url(img/MOSHED-2019-2-5-15-0-51.jpg);
+    height: 100vh;
+    overflow: hidden;
+    filter: drop-shadow(0px 15px 10px #5a432f);
+}
+
+/* strzałka */
+.header-arrow {
+    position: absolute;
+    bottom: 2vh;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5vw;
+    height: 5vw;
+    font-size: 50px;
+    color: #222327;
+    /* color: red; */
+    cursor: pointer;
+    z-index: 2;
+}
+
+.header-arrow i {
+    transform: translateY(0);
+    will-change: transform;
+    transition: transform 0.2s;
+}
+
+.header-arrow:hover>i {
+    transform: translateY(5px);
+}
+
+/* NAVI */
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    /* top: 20px; */
+    height: 15vh;
+    width: 100%;
+    background-color: rgba(62, 77, 89, 0.4);
+    box-shadow: 0px 1px 10px 0px rgba(89, 110, 127, 0.75);
+    z-index: 99;
+}
+
+.nav-logo {
+    height: 90%;
+    width: 10%;
+}
+
+.nav-logo img {
+    height: 100%;
+}
+
+.menu {
+    height: 90%;
+    width: 65%;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    list-style-type: none;
+}
+
+.menu ul li {
+    flex-basis: 20%;
+    text-transform: uppercase;
+    font-size: 15px;
+    color: #ECF2F3;
+    cursor: pointer;
+    text-align: center;
+    padding: 5px;
+    font-family: var(--mainFont);
+}
+
+.menu ul li::after {
+    content: "";
+    display: block;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background-color: red;
+    transition: 0.3s
+}
+
+.menu ul li:hover {
+    color: #786C99
+}
+
+.menu ul li:hover::after {
+    background-color: #E09824;
+    width: 100%;
+}
+
+.nav-socials {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 90%;
+    width: 10%;
+}
+
+.nav-socials a {
+    font-size: 40px;
+    color: #ECF2F3;
+
+}
+
+.nav-socials>a>.fa-instagram:hover {
+    color: pink
+}
+
+.nav-socials>a>.fa-youtube:hover {
+    color: #F30007;
+}
+
+.nav-socials>a>.fa-facebook:hover {
+    color: #3b5998;
+}
+
+/* HEADER MAIN */
+
+
+.home {
+    position: relative;
+    left: 0;
+    top: 15vh;
+    display: flex;
+    overflow: hidden;
+    height: 85vh;
+}
+
+.motto {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    flex-grow: 60%;
+    flex-grow: 2;
+}
+
+.motto h1 {
+    font-family: var(--headFont);
+    font-weight: bold;
+    font-size: 50px;
+    color: #ECF2F3;
+    margin-top: 3vw;
+    padding: 10px;
+}
+
+.motto img {
+    width: 15vw;
+    height: 15vw;
+    margin: 3vw 0 1vw;
+    /* display: none; */
+    opacity: 0;
+    animation: showLogo 0.8s 0.4s ease-in both;
+}
+
+@keyframes showLogo {
+    100% {
+        opacity: 1;
+    }
+}
+
+.motto p {
+    font-family: var(--headFont);
+    font-weight: normal;
+    color: #ECF2F3;
+    font-size: 22px;
+    color: #FC3C3C;
+    transform: translateX(-40vw);
+    animation: showMotto 0.8s 0.4s ease-in both;
+}
+
+@keyframes showMotto {
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.bottle {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-grow: 1;
+    z-index: 1;
+    transform: translateX(40vw);
+    animation: slideBottle 0.8s ease-in both;
+}
+
+@keyframes slideBottle {
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* animacja butelki */
+
+
+
+.bottle img {
+    min-height: 70vh;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    filter: drop-shadow(52px 15px 26px #000000);
+}
+
+.wood {
+    position: absolute;
+    bottom: -3vh;
+    left: 0;
+    z-index: 0;
+}
+
+/* SEKCJA HISTORIA BROWARU */
+
+.history-wrap {
+    background-color: #303740;
+}
+
+.history-wrap h1 {
+    font-family: var(--headFont);
+    text-transform: uppercase;
+    font-size: 65px;
+    padding: 50px;
+    text-align: center;
+    color: #D0D0D2
+}
+
+.history {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.history-photos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    width: 50%;
+    background-color: #303740;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.history-photo {
+    transform: translate(-50vw);
+    width: 400px;
+    height: 300px;
+}
+
+.history-photo.activeImg {
+    /* background-color: red; */
+    transform: translate(0);
+    transition: 0.5s 0.5s;
+}
+
+.history-photo img {
+    filter: drop-shadow(9px -5px 47px #000000);
+}
+
+.history-photo:nth-child(1) {
+    margin-top: 50px;
+}
+
+.history-photo:nth-child(5) img {
+    margin: 40px 0 40px 60px;
+    width: 80%;
+    height: 80%;
+    transform: rotate(5deg);
+
+}
+
+.history-articles {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 50%;
+    background-color: #303740;
+    padding-top: 2vh;
+    overflow: hidden;
+}
+
+
+.year {
+    background-color: #303740;
+    margin-top: 30px;
+    box-shadow: 0px -10px 16px 0px rgba(0, 0, 0, 0.75);
+    transform: translate(-55vw);
+    flex: 1;
+}
+
+
+
+.active {
+    background-color: #203740;
+    transform: translate(0);
+    transition: transform 0.4s, background-color 0.4s 0.4s;
+}
+
+.date {
+    position: relative;
+    font-family: var(--mainFont);
+    font-size: 30px;
+    padding-left: 30px;
+    color: #D0D0D2;
+    /* transform: translate(-20%); */
+}
+
+.dot {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #297C99;
+    box-shadow: 0 0 0 3px transparent, 0 0 0 6px #ECA321;
+    border: 2px solid transparent;
+    opacity: 0;
+    /* z-index: 3; */
+}
+
+.history-articles article.active p.date span.dot {
+    opacity: 1;
+    transition: 0.2s;
+}
+
+.underline {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(50%);
+    height: 4px;
+    width: 0;
+    background-color: #297C99;
+}
+
+.history-articles article.active p.date span.underline {
+    width: 100%;
+    transition: width 0.2s 0.4s;
+}
+
+.history-content {
+    font-family: var(--mainFont);
+    font-size: 16px;
+    line-height: 18px;
+    padding: 20px 10px 20px 30px;
+    color: #D0D0D2
+}
+
+/* linia */
+.history-line {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 4px;
+    height: 0;
+    border-left: 4px dotted #297C99;
+    z-index: 2;
+}
+
+/* media history */
+
+@media (max-width:800px) {
+    .history {
+        flex-direction: column;
+        align-items: center;
+        /* justify-content: center; */
+    }
+
+    .history-articles {
+        order: 1;
+        width: 80%;
+        padding-top: 2vh;
+
+
+    }
+
+    .year {
+
+        /* transform: translateX(-70vw); */
+
+    }
+
+    .history-photos {
+        order: 2;
+        width: 80%;
+
+    }
+
+    .history-line {
+        transform: translateX(-39vw);
+    }
+}
+
+
+
+/* BROWAR DZISIAJ */
+
+.browarToday-wrap {
+    position: relative;
+    background-color: #303740;
+}
+
+.browarToday-wrap h1 {
+    font-family: var(--headFont);
+    text-transform: uppercase;
+    font-size: 65px;
+    padding: 50px;
+    text-align: center;
+    color: #D0D0D2
+}
+
+.browarToday {
+    display: flex;
+}
+
+.browarToday-content {
+    width: 50%;
+    font-family: var(--mainFont);
+    font-size: 16px;
+    line-height: 20px;
+    padding: 60px 10px 20px 30px;
+    color: #D0D0D2;
+    z-index: 2;
+}
+
+.browarToday-content p::first-letter {
+
+    font-size: 40px;
+
+}
+
+.browarToday-photos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    z-index: 2;
+}
+
+.browarToday-photo img {
+    filter: drop-shadow(9px -5px 47px #000000);
+}
+
+.browarToday-logo {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media (max-width:800px) {
+    .browarToday {
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+    }
+
+    .browarToday-content {
+        width: 80%;
+
+    }
+
+    .browarToday-logo {
+        display: none;
+    }
+
+}
+
+/* NASZE PIWA */
+.beers-wrap {
+    position: relative;
+    height: 100vh;
+    background-color: rgb(48, 55, 64);
+    color: white;
+}
+
+.beers-wrap h1 {
+    font-family: var(--headFont);
+    text-transform: uppercase;
+    font-size: 65px;
+    padding: 30px;
+    text-align: center;
+    color: #D0D0D2
+}
+
+.beers {
+
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    height: 70vh;
+    background-color: rgb(32, 49, 71);
+    overflow: hidden;
+    box-shadow: 0px 0px 44px -3px rgba(0, 0, 0, 0.75);
+}
+
+
+.beers::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-image: url(img/logo-komes\ 3.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    filter: opacity(0.1);
+
+}
+
+.beers-content {
+    display: flex;
+    height: 100%;
+    z-index: 2;
+}
+
+.beer {
+    height: 100%;
+    width: 100%;
+    flex-shrink: 0;
+    display: flex;
+    position: relative;
+    box-shadow: 0px 0px 40px 0px rgb(32, 49, 71);
+    z-index: 2;
+}
+
+.beer h3 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-family: var(--headFont);
+    text-transform: uppercase;
+    font-size: 40px;
+    color: #D0D0D2;
+}
+
+/* div opis */
+.description {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    font-family: var(--headFont);
+}
+
+.description>* {
+    margin-top: 20px;
+    padding-left: 10px;
+}
+
+.description h4 {
+    font-weight: bold;
+    font-size: 35px;
+    text-decoration: underline;
+    letter-spacing: 2px;
+}
+
+.description>p:nth-child(2) {
+    font-size: 20px;
+
+}
+
+.description>p:nth-child(3) {
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.description>p:nth-child(5),
+.description>p:nth-child(4) {
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.description img {
+    margin-top: 0;
+    max-width: 475px;
+}
+
+/* div butelka */
+
+.beer-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    z-index: 2;
+}
+
+.beer-img img {
+    margin-top: 3vw;
+    height: 85%;
+}
+
+
+/* PRAWY DIV INFO */
+.beer-info {
+    padding-left: 5vw;
+    width: 40%;
+}
+
+.composition>* {
+    line-height: 23px;
+    padding: 0 10px 0 20px;
+}
+
+.composition {
+    font-family: var(--mainFont);
+}
+
+.composition h5 {
+    position: relative;
+    margin-top: 40px;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.composition h5::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 30%;
+    top: 50%;
+    width: 60%;
+    height: 4px;
+    background-color: white;
+}
+
+.materials {
+    display: flex;
+}
+
+.beer-water {
+    margin-top: 2vw;
+}
+
+.materials p:nth-child(1) {
+    width: 30%;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.materials p:nth-child(2) {
+    width: 60%;
+    font-size: 16px;
+}
+
+.beer-data {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.beer-blg,
+.beer-alc {
+    display: flex;
+    text-transform: uppercase;
+    width: 20%;
+    font-size: 20px;
+}
+
+.beer-alc span,
+.beer-blg span {
+    margin-left: 5px;
+    color: blue;
+
+}
+
+/* temperatura i szkło */
+.beer-glass {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.beer-temp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    width: 30%;
+    border-right: 2px dotted green;
+}
+
+.beer-temp p {
+    margin-left: 5px;
+}
+
+.beer-komesglass {
+    display: flex;
+    width: 30%;
+    /* z-index: 4; */
+}
+
+.beer-glass-img {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+}
+
+.beer-glass-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.beer-glass-text {
+    font-size: 18px;
+}
+
+
+/* strzałki */
+
+.prev {
+    display: flex;
+    position: absolute;
+    left: 7vw;
+    bottom: 5vh;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.prev p {
+    line-height: 50px;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding-left: 1vw;
+
+}
+
+.prev i {
+    font-size: 50px;
+}
+
+.prev:hover {
+    transform: scale(1.05);
+}
+
+.next {
+    display: flex;
+    position: absolute;
+    bottom: 5vh;
+    right: 7vw;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.next p {
+    line-height: 50px;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding-right: 1vw;
+    opacity: 1;
+}
+
+.next i {
+    font-size: 50px;
+}
+
+.next:hover {
+    transform: scale(1.05);
+}
+
+/* animacja next */
+@keyframes hide {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* lista piw */
+.listBeers {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 80vw;
+    height: 70vh;
+    /* background-color: red; */
+    z-index: inherit;
+    transform: translate(93%, -50%);
+    transition: 0.5s cubic-bezier(.15, .38, .64, .97);
+}
+
+.listActive {
+    transform: translate(0, -50%)
+}
+
+.overlap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    width: 8%;
+    background-color: green;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    text-align: center;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 18px;
+    font-family: var(--mainFont);
+    cursor: pointer;
+}
+
+.catalog {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    justify-content: center;
+    background-color: rgba(85, 117, 127, 0.8)
+}
+
+.itemBeer {
+    position: relative;
+    height: 45%;
+    flex-basis: 17%;
+    background-color: rgb(0, 96, 127);
+    margin: 5px;
+    border: 1px solid rgb(0, 191, 255)
+}
+
+
+
+.titleBeer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 252, 241);
+    cursor: pointer;
+    opacity: 0;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+.titleBeer p {
+    font-size: 35px;
+    text-transform: uppercase;
+    color: black;
+    text-align: center;
+    font-family: var(--headFont);
+    cursor: pointer;
+    /* padding: 5px; */
+}
+
+.titleBeer:hover {
+    opacity: 1;
+}
+
+
+.itemImg {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+}
+
+.itemImg img {
+    height: 100%;
+}
+
+
+
+
+
+/* otwarta fermentacja */
+
+.open-fermentation-wrap {
+    background-color: #303740;
+    /* height: 200vh; */
+}
+
+.open-fermentation-wrap h1 {
+    font-family: var(--headFont);
+    text-transform: uppercase;
+    font-size: 65px;
+    padding: 30px 0 0;
+    text-align: center;
+    color: #D0D0D2
+}
+
+.open-fermentation {
+    display: flex;
+    flex-direction: column;
+}
+
+.fermentation {
+    display: flex;
+    flex-direction: column;
+    padding: 2vw 3vw;
+}
+
+.fermentation h3 {
+    font-family: var(--headFont);
+    text-transform: uppercase;
+    font-size: 40px;
+    color: #D0D0D2
+}
+
+.fermentation h4 {
+    font-family: var(--headFont);
+    /* text-transform: uppercase; */
+    font-size: 25px;
+    color: #D0D0D2
+}
+
+.fermentation-content {
+    display: flex;
+    margin-top: 20px;
+    border-top: 2px solid red;
+    padding: 20px 0 0 10px;
+}
+
+.fermentation-content p {
+    flex-basis: 60%;
+    color: white;
+    font-family: var(--mainFont);
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.fermentation-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 40%;
+}
+
+.fermentation-img img {
+    filter: drop-shadow(9px -5px 20px #000000);
+}
+
+/* KONTAKT */
+
+.about-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: #303740;
+    height: 100vh;
+}
+
+.about-wrap h1 {
+    font-family: var(--headFont);
+    text-transform: uppercase;
+    font-size: 65px;
+    padding-bottom: 100px;
+    text-align: center;
+    color: #D0D0D2;
+}
+
+.about {
+    position: relative;
+    display: flex;
+    /* padding: 15px 15px 0 15px; */
+    flex-wrap: wrap;
+}
+
+.about::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-image: url(img/browar-fortuna-pieczec-2018.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    filter: opacity(0.1);
+}
+
+.about-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-basis: 50%;
+    z-index: 2;
+}
+
+.info-name {
+    font-family: var(--headFont);
+    color: white;
+    margin-left: 150px;
+}
+
+.info-name p:nth-child(1) {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.info-name p:nth-child(2) {
+    font-size: 25px;
+}
+
+.info-name p:nth-child(3),
+.info-name p:nth-child(4) {
+    font-size: 22px;
+}
+
+.about-location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    cursor: pointer;
+    border: 1px solid red;
+    padding: 5px;
+    width: 18vw;
+
+}
+
+.about-location i {
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+.about-number {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--headFont);
+    color: white;
+    font-size: 20px;
+    margin-left: 150px;
+    z-index: 2;
+}
+
+.contact-form {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+
+}
+
+.contact-form h2 {
+    font-family: var(--headFont);
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 33px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    padding: 5px;
+    width: 30vw;
+    font-size: 22px;
+    margin-top: 10px;
+    color: white;
+    outline: none;
+    transition: 0.4s;
+}
+
+.contact-form input:focus {
+    border-bottom: 1px solid rgb(11, 216, 103);
+}
+
+.contact-form textarea {
+    border: 1px solid white;
+}
+
+.contact-form textarea:focus {
+    border: 1px solid rgb(11, 216, 103);
+}
+
+.about-socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    height: 15vh;
+    width: 100%;
+    background-color: #1F2329;
+}
+
+.socials-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3vw;
+    height: 3vw;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 2;
+    border: 1px solid red;
+    border-radius: 50%;
+    padding: 30px;
+    transition: 0.4s;
+}
+
+.socials-container a {
+    transition: 0.4s;
+}
+
+.socials-container:nth-child(2) {
+    margin: 0 20px;
+    color: #F30007;
+}
+
+.socials-container:nth-child(1) i {
+    color: pink
+}
+
+.socials-container:nth-child(2) i {
+    margin: 0 20px;
+    color: #F30007;
+}
+
+.socials-container:nth-child(3) i {
+    color: #3b5998;
+}
+
+.socials-container:hover {
+    background-color: #e67e22;
+}
+
+.socials-container:hover>a {
+    transform: scale(1.2) rotate(25deg);
+}
+
+/* .beers {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    overflow-x: auto;
+    overflow: hidden;
+}
+
+.beer {
+    width: 300px;
+    flex-shrink: 0;
+    height: 100%;
+} */
+
+/* .komes1 {
+    background-color: red;
+}
+
+.komes2 {
+    background-color: green;
+}
+
+.komes3 {
+    background-color: yellow;
+}
+
+.komes4 {
+    background-color: black;
+}
+
+.komes5 {
+    background-color: gray;
+}
+
+.komes6 {
+    background-color: hotpink;
+}
+
+.komes7 {
+    background-color: mediumblue;
+}
+
+.komes8 {
+    background-color: orchid;
+}
+
+.komes9 {
+    background-color: snow;
+} */
