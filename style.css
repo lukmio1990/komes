@@ -31,7 +31,7 @@ body {
 .goToUp {
     position: fixed;
     bottom: 3vh;
-    left: 95%;
+    right: 3vw;
     font-size: 50px;
     color: #52755D;
     z-index: 3;
@@ -232,7 +232,7 @@ nav {
     font-size: 22px;
     color: #FC3C3C;
     transform: translateX(-40vw);
-    animation: showMotto 0.8s 0.4s ease-in both;
+    animation: showMotto 0.8s 0.6s ease-in both;
 }
 
 @keyframes showMotto {
@@ -248,7 +248,7 @@ nav {
     flex-grow: 1;
     z-index: 1;
     transform: translateX(40vw);
-    animation: slideBottle 0.8s ease-in both;
+    animation: slideBottle 0.8s 0.3s ease-in both;
 }
 
 @keyframes slideBottle {
@@ -1028,14 +1028,21 @@ nav {
     filter: drop-shadow(9px -5px 20px #000000);
 }
 
+/* media fermentation */
+@media (max-width:800px) {
+    .fermentation-content {
+        flex-direction: column;
+    }
+}
+
 /* KONTAKT */
 
 .about-wrap {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    /* justify-content: flex-end; */
     background-color: #303740;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .about-wrap h1 {
@@ -1224,52 +1231,23 @@ nav {
     transform: scale(1.2) rotate(25deg);
 }
 
-/* .beers {
-    width: 300px;
-    height: 300px;
-    display: flex;
-    overflow-x: auto;
-    overflow: hidden;
+/* media footer */
+@media (max-width:800px) {
+    .about {
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-info {
+        margin-bottom: 5vh;
+        flex-basis: 80%;
+
+    }
+
+    .contact-form {
+        width: 80vw;
+
+    }
 }
-
-.beer {
-    width: 300px;
-    flex-shrink: 0;
-    height: 100%;
-} */
-
-/* .komes1 {
-    background-color: red;
-}
-
-.komes2 {
-    background-color: green;
-}
-
-.komes3 {
-    background-color: yellow;
-}
-
-.komes4 {
-    background-color: black;
-}
-
-.komes5 {
-    background-color: gray;
-}
-
-.komes6 {
-    background-color: hotpink;
-}
-
-.komes7 {
-    background-color: mediumblue;
-}
-
-.komes8 {
-    background-color: orchid;
-}
-
-.komes9 {
-    background-color: snow;
-} */
