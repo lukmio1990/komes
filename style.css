@@ -540,6 +540,7 @@ nav {
 .beers-wrap {
     position: relative;
     height: 100vh;
+    max-height: 760px;
     background-color: rgb(48, 55, 64);
     color: white;
 }
@@ -560,7 +561,9 @@ nav {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80vw;
+    max-width: 1230px;
     height: 70vh;
+    max-height: 500px;
     background-color: rgb(32, 49, 71);
     overflow: hidden;
     box-shadow: 0px 0px 44px -3px rgba(0, 0, 0, 0.75);
@@ -1062,7 +1065,7 @@ nav {
     flex-direction: column;
     /* justify-content: flex-end; */
     background-color: #303740;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 
 .about-wrap h1 {
@@ -1076,6 +1079,7 @@ nav {
 
 .about {
     position: relative;
+    padding-bottom: 20vh;
     display: flex;
     /* padding: 15px 15px 0 15px; */
     flex-wrap: wrap;
@@ -1199,6 +1203,10 @@ nav {
 }
 
 .about-socials {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
