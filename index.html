@@ -30,11 +30,11 @@
       </div>
       <div class="menu">
         <ul>
-          <li data-key="1">home</li>
-          <li data-key="2">browar</li>
-          <li data-key="3">nasze piwa</li>
-          <li data-key="4">nasza technologia</li>
-          <li data-key="5">kontakt</li>
+          <li id="home" data-key="1">home</li>
+          <li id="brewery" data-key="2">browar</li>
+          <li id="ourBeers" data-key="3">nasze piwa</li>
+          <li id="technology" data-key="4">nasza technologia</li>
+          <li id="contact" data-key="5">kontakt</li>
         </ul>
       </div>
 
@@ -227,7 +227,7 @@
     </div>
 
     <!-- NASZE PIWA -->
-    <div class="beers-wrap" data-key="3">
+    <div class="beers-wrap ourbeers" data-key="3">
       <h1>Nasze piwa</h1>
 
       <div class="beers">
@@ -1264,6 +1264,27 @@
   </div>
   </div>
   <script src="script.js"></script>
+  <script type="module">
+
+    import jump from './node_modules/jump.js/dist/jump.module.js'
+    let list = document.querySelectorAll('.menu ul');
+
+  list.forEach((item)=>{
+item.addEventListener("click", (e)=>{
+  let dataId = e.target.getAttribute("id");
+  console.log(dataId);
+  if(dataId == "home") jump(".wrap");
+  if(dataId == "brewery") jump(".history-wrap");
+  if(dataId == "ourBeers") jump(".beers-wrap");
+  if(dataId == "technology") jump(".open-fermentation-wrap");
+  if(dataId == "contact") jump(".about-wrap");
+  
+})
+  })
+
+  
+  </script>
+
 </body>
 
 </html>

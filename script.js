@@ -20,20 +20,26 @@ const historySection = document.querySelector('.history');
 const articles = [...document.querySelectorAll('.year')];
 //pobieranie zdjęć z sekcji history
 const articlesImg = [...document.querySelectorAll('.history-photo')];
+//pobieranie footera
+const footer = document.querySelector('.about-wrap');
 
 //przewijanie do sekcji
 function goToSection(e) {
   const key = e.target.getAttribute("data-key")
   const runSection = document.querySelector(`div[data-key="${key}"]`);
   let scroll = scrollY;
-  const runToSection = setInterval(() => {
-    if (Math.floor(window.scrollY) >= runSection.offsetTop) {
-      clearInterval(runToSection);
-    } else {
-      scroll += 30;
-      window.scrollTo(0, scroll);
-    }
-  }, 0.2);
+  let heightFooter = 0;
+  // const runToSection = setInterval(() => {
+  //   let offset = window.innerHeight - runSection.offsetHeight;
+
+  //   if (Math.floor(window.scrollY) >= runSection.offsetTop) {
+  //     clearInterval(runToSection);
+  //   } else {
+  //     // console.log(key);
+  //     scroll += 30;
+  //     window.scrollTo(0, scroll);
+  //   }
+  // }, 0.2);
 }
 
 navList.forEach((item) => {
@@ -232,6 +238,14 @@ itemsBeer.forEach((item) => {
 const showList = () => {
   listBeers.classList.toggle("listActive");
 }
+
+window.addEventListener("click", (e) => {
+  if (e.target.getAttribute("data-key") == 3) {
+    listBeers.classList.remove("listActive")
+  }
+
+  // console.log(e.target);
+})
 
 listBtn.addEventListener("click", showList)
 
