@@ -257,3 +257,13 @@ const resize = () => {
   console.log('działa');
 }
 window.addEventListener("resize", resize)
+
+const nav = document.querySelector('nav');
+window.addEventListener("scroll", () => {
+  console.log('działa');
+  if (scrollY > 50) {
+    nav.classList.add('nav-active');
+  } else {
+    nav.classList.remove('nav-active');
+  }
+})

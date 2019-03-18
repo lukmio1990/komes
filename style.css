@@ -98,6 +98,14 @@ nav {
     background-color: rgba(62, 77, 89, 0.4);
     box-shadow: 0px 1px 10px 0px rgba(89, 110, 127, 0.75);
     z-index: 99;
+    transition: 0.3s;
+}
+
+.nav-active {
+    height: 10vh;
+    background-color: rgba(62, 77, 89, 1);
+    top: 0;
+
 }
 
 .nav-logo {
