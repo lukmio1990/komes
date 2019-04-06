@@ -6,18 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:400,700|Inknut+Antiqua:400,700&amp;subset=latin-ext"
+  <link
+    href="https://fonts.googleapis.com/css?family=Barlow+Condensed:400,700|Inknut+Antiqua:400,700&amp;subset=latin-ext"
     rel="stylesheet">
 
   <!-- font awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <!-- css -->
   <link rel="stylesheet" href="style.css">
   <title>Document</title>
 </head>
 
 <body>
+
+  <div class="loader">
+    <div class="loader-img">
+      <img src="img/browar-fortuna-pieczec-2018.png" alt="">
+    </div>
+  </div>
+
   <div class="wrap " data-key="1">
     <div class="burger">
       <span></span>
@@ -1276,10 +1284,10 @@ item.addEventListener("click", (e)=>{
   let dataId = e.target.getAttribute("id");
   console.log(dataId);
   if(dataId == "home") jump(".wrap");
-  if(dataId == "brewery") jump(".history-wrap");
-  if(dataId == "ourBeers") jump(".beers-wrap");
-  if(dataId == "technology") jump(".open-fermentation-wrap");
-  if(dataId == "contact") jump(".about-wrap");
+  if(dataId == "brewery") jump(".history-wrap",{offset:-20});
+  if(dataId == "ourBeers") jump(".beers-wrap",{offset:-30});
+  if(dataId == "technology") jump(".open-fermentation-wrap",{offset:-30});
+  if(dataId == "contact") jump(".about-wrap",{offset:-80});
   
 })
   })

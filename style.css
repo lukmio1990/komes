@@ -27,6 +27,56 @@ body {
     overflow: hidden;
 }
 
+/* loader */
+
+.loader {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    z-index: 99999999;
+    visibility: visible;
+
+}
+
+.loader.loading {
+    animation: fadeOut 3s forwards;
+}
+
+.loader-img {
+    width: 10vw;
+    height: 10vw;
+    /* transform: translate(-50%, -50%); */
+    transform: rotate(0);
+    animation: loaderAnimation 0.9s infinite ease-in-out;
+}
+
+.loader-img.loading {
+    animation: fadeOut 3s forwards;
+}
+
+.loader-img img {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes loaderAnimation {
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
 /* STRZAŁKA POWROTU DO GÓRY */
 .goToUp {
     position: fixed;
@@ -188,6 +238,109 @@ nav {
     color: #3b5998;
 }
 
+/* burger */
+
+.burger {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    /* background-color: #666; */
+    cursor: pointer;
+    transition: 0.2s;
+    visibility: hidden;
+    z-index: 99999;
+}
+
+.burger span {
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background-color: #f00;
+    transition: top 0.2s 0.2s, bottom 0.2s 0.2s, opacity 0.2s 0.2s, transform 0.2s 0.4s;
+}
+
+.burger span:nth-child(1) {
+    top: 0;
+    left: 0;
+}
+
+.burger span:nth-child(2) {
+    left: 0;
+    top: calc(50% - 5px);
+}
+
+.burger span:nth-child(3) {
+    bottom: 0;
+    left: 0;
+}
+
+.burger.on {
+    transform: rotate(90deg);
+}
+
+.burger.on span:nth-child(1) {
+    top: calc(50% - 5px);
+    transform: rotate(45deg);
+}
+
+.burger.on span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.on span:nth-child(3) {
+    bottom: calc(50% - 5px);
+    transform: rotate(-45deg);
+}
+
+@media (max-width:600px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 20px;
+        right: 0;
+        height: 80vh;
+        width: 80%;
+        max-width: 400px;
+        background-color: rgba(62, 77, 89, 0.8);
+    }
+
+    .nav-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 10px;
+        height: 25%;
+        width: 60%;
+    }
+
+    .menu {
+        height: 50%;
+        width: 100%;
+    }
+
+    .menu ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        list-style-type: none;
+    }
+
+    .nav-socials {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 30%;
+        width: 100%;
+    }
+}
+
 /* HEADER MAIN */
 
 
@@ -318,6 +471,9 @@ nav {
 }
 
 .history-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transform: translate(-50vw);
     width: 400px;
     height: 300px;
@@ -331,6 +487,7 @@ nav {
 
 .history-photo img {
     filter: drop-shadow(9px -5px 47px #000000);
+    max-width: 80vw;
 }
 
 .history-photo:nth-child(1) {
@@ -579,7 +736,7 @@ nav {
 }
 
 
-/* .beers::after {
+.beers::after {
     content: "";
     display: block;
     position: absolute;
@@ -588,13 +745,14 @@ nav {
     right: 0;
     bottom: 0;
     z-index: 1;
+    /* padding: 10px; */
     background-image: url(img/logo-komes\ 3.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
     filter: opacity(0.1);
 
-} */
+}
 
 .beers-content {
     display: flex;
@@ -709,7 +867,8 @@ nav {
 
 .beer-img img {
     margin-top: 3vw;
-    height: 85%;
+    height: 27vw;
+    width: 8vw
 }
 
 

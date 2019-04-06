@@ -22,6 +22,14 @@ const articles = [...document.querySelectorAll('.year')];
 const articlesImg = [...document.querySelectorAll('.history-photo')];
 //pobieranie footera
 const footer = document.querySelector('.about-wrap');
+//loader
+const loader = document.querySelector('.loader');
+
+// loader
+window.addEventListener("load", () => {
+  loader.classList.add("loading");
+  document.querySelector('.loader-img').classList.add("loading");
+})
 
 //przewijanie do sekcji
 function goToSection(e) {
