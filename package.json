@@ -1,0 +1,24 @@
+{
+  "name": "komes-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "jump.js": "^1.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukmio1990/komes.git"
+  },
+  "author": "L Mioduszewski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lukmio1990/komes/issues"
+  },
+  "homepage": "https://github.com/lukmio1990/komes#readme"
+}
