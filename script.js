@@ -1,4 +1,3 @@
-import jump from "./node_modules/jump.js/dist/jump.module.js";
 // pobieranie headera
 const header = document.querySelector("header");
 //pobierani nav listy
