@@ -280,26 +280,26 @@ window.addEventListener("scroll", () => {
 
 let list = document.querySelectorAll(".menu ul");
 
-list.forEach(item => {
-  item.addEventListener("click", e => {
-    let dataId = e.target.getAttribute("id");
-    console.log(dataId);
-    if (dataId == "home") jump(".wrap");
-    if (dataId == "brewery")
-      jump(".history-wrap", {
-        offset: -20
-      });
-    if (dataId == "ourBeers")
-      jump(".beers-wrap", {
-        offset: -30
-      });
-    if (dataId == "technology")
-      jump(".open-fermentation-wrap", {
-        offset: -30
-      });
-    if (dataId == "contact")
-      jump(".about-wrap", {
-        offset: -80
-      });
-  });
-});
+// list.forEach(item => {
+//   item.addEventListener("click", e => {
+//     let dataId = e.target.getAttribute("id");
+//     console.log(dataId);
+//     if (dataId == "home") jump(".wrap");
+//     if (dataId == "brewery")
+//       jump(".history-wrap", {
+//         offset: -20
+//       });
+//     if (dataId == "ourBeers")
+//       jump(".beers-wrap", {
+//         offset: -30
+//       });
+//     if (dataId == "technology")
+//       jump(".open-fermentation-wrap", {
+//         offset: -30
+//       });
+//     if (dataId == "contact")
+//       jump(".about-wrap", {
+//         offset: -80
+//       });
+//   });
+// });
